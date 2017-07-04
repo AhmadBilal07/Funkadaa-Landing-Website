@@ -1,0 +1,36 @@
+
+img {
+	display: block;
+    max-width: 50%;
+    height: auto;
+margin: auto;
+}
+
+a.F{
+
+font-family:  matura MT Script Capitals;
+color: #b30000;
+}
+
+a.K{
+font-family:  matura MT Script Capitals;
+color: #b38f00;
+}
+
+
+a.text{
+font-family: Palace Script MT;
+font-weight: bold;
+
+}
+
+#div1
+{
+	font-size: 07.30vw;
+	 position: absolute;
+    top: 63%;
+    left: 51%;
+    transform: translate(-55%, -55%);
+    
+    
+}
