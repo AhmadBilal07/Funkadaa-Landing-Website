@@ -1,3 +1,57 @@
+body{
+    text-align: center;
+    background: white;
+  font-family: sans-serif;
+  font-weight: 100;
+background-image: url("alooottt.jpg");
+background-size: 70.5% 100%;
+}
+body:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+}
+h1{
+/*#396*/
+  color: black;
+  font-weight: 300;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+#clockdiv{
+    font-family: sans-serif;
+  /*  text      */
+    color:#fff  ;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div{
+/*  #00BF96*/
+    padding: 10px;
+    border-radius: 3px;
+    background:grey ;
+    display: inline-block;
+}
+#clockdiv div > span{
+/*#00816A;*/ 
+   padding: 15px;
+    border-radius: 3px;
+    background:black; 
+    display: inline-block;
+}
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
 
 img {
 	display: block;
