@@ -26,11 +26,11 @@ font-weight: bold;
 
 #div1
 {
-	font-size: 07.30vw;
+		font-size: 07.30vw;
 	 position: relative;
-    top: 63%;
-    left: 51%;
-    transform: translate(-55%, -55%);
+    transform: translate(0%, -55%);    
+    text-align: center;
+
     
     
 }
