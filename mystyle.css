@@ -1,0 +1,103 @@
+body{
+    text-align: center;
+    background: white;
+  font-family: sans-serif;
+  font-weight: 100;
+background-image: url("13.jpg");
+background-size: 49.97% 80%;
+}
+body:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 1000%);
+}
+h1{
+/*#396*/
+  color: black;
+  font-weight: 300;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+#p1
+{
+position: relative;
+   left: -41%;
+    top: -120px;
+}
+#p2
+{
+position: relative;
+   left: 20.5%;
+    top: -100px;
+}
+
+
+#clockdiv{
+    font-family: sans-serif;
+  /*  text      */
+    color:#fff  ;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div{
+/*  #00BF96*/
+    padding: 10px;
+    border-radius: 3px;
+    background:#b61e33 ;
+    display: inline-block;
+}
+#clockdiv div > span{
+/*#00816A;*/ 
+   padding: 15px;
+    border-radius: 3px;
+    background:#af9002; 
+    display: inline-block;
+}
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+img {
+	display: block;
+    max-width: 50%;
+    height: auto;
+margin: auto;
+}
+
+a.F{
+
+font-family:  matura MT Script Capitals;
+color: #b30000;
+}
+
+a.K{
+font-family:  matura MT Script Capitals;
+color: #b38f00;
+}
+
+
+a.text{
+font-family: Palace Script MT;
+font-weight: bold;
+
+}
+
+#div1
+{
+		font-size: 07.30vw;
+	 position: relative;
+    transform: translate(0%, -55%);    
+    text-align: center;
+
+    
+    
+}
