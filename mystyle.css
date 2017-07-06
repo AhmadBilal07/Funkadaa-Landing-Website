@@ -23,17 +23,22 @@ h1{
   font-size: 40px;
   margin: 40px 0px 20px;
 }
+.1{
+position:relative;
+}
+
 #p1
 {
-position: relative;
-   left: -41%;
-    top: -120px;
+position: absolute;
+   left: 770px;
+    top: 400px;
 }
+
 #p2
 {
-position: relative;
-   left: 20.5%;
-    top: -100px;
+position: absolute;
+   left: -240px;
+    top: 400px;
 }
 
 
