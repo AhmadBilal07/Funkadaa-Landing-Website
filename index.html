@@ -2,13 +2,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>FunKadaa</title>
 </head>
 <body>
     <style type="text/css">
         body {
             background: linear-gradient(to right,rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url("Images/13.jpg");
             background-size: 10% auto;
+            resize:none;
         }
 
         #load {
@@ -21,12 +22,12 @@
         }
 
         #contents {
-            height: 30em;
+            height: 40em;
             position: relative;
             resize: none;
         }
 
-        #welcome, #to {
+        #welcome {
             color: brown;
             font-family: 'Times New Roman';
             margin: 0;
@@ -36,19 +37,18 @@
             font-size: 150px;
             margin-right: -50%;
             transform: translate(-50%, -50%);
-            resize: none;  padding:0px;
+            resize: none;
         }
 
         #popup {
             display: none;
             position: absolute;
             margin: 0 auto;
-            top: 38%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 9999;
             resize: none;
-            padding:0px;
         }
 
         #clock {
@@ -60,20 +60,17 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
             resize: none;
-            padding:0px;
         }
 
         #follows {
             display: none;
             position: absolute;
             margin: 0 auto;
-            top: 147%;
-            left: 50%;
+            top: 60%;
+            left: 8%;
             transform: translate(-50%, -50%);
             z-index: 9999;
             resize: none;
-            padding-bottom:20px;
-            resize:none;
         }
 
         #clockdiv {
@@ -83,7 +80,6 @@
             font-weight: 100;
             text-align: center;
             font-size: 30px;
-
         }
 
             #clockdiv > div {
@@ -94,7 +90,7 @@
             }
 
             #clockdiv div > span {
-                padding: 10px;
+                padding: 15px;
                 border-radius: 3px;
                 background: #af9002;
                 display: inline-block;
@@ -114,77 +110,71 @@
             } else if (state == 'complete') {
                 setTimeout(function () {
                     document.getElementById('interactive');
-                    $('#load').fadeOut('fast', function () {
-                        document.getElementById('contents').style.visibility = "visible";
-                    });
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('contents').style.visibility = "visible";
                 }, 1000);
             }
         }
         $(document).ready(function () {
-            $("#to").hide(); $("#popup").hide(); $("#clock").hide(); $("#follows").hide();
-            $('#welcome').hide().fadeIn(3000);
-            $('#welcome').fadeOut('fast' , function () {
-                $('#to').hide().fadeIn(2000);
-                $('#to').fadeOut('fast', function () {
-                    $('#popup').hide().fadeIn(2000);
-                    $('#clock').delay(2000).fadeIn('fast', function () {
-                        $('#follows').hide().fadeIn('fast');
-                    });
-                    function initializeClock(id, endtime) {
-                        var clock = document.getElementById(id);
-                        var daysSpan = clock.querySelector('.days');
-                        var hoursSpan = clock.querySelector('.hours');
-                        var minutesSpan = clock.querySelector('.minutes');
-                        var secondsSpan = clock.querySelector('.seconds');
-
-                        function updateClock() {
-                            var t = getTimeRemaining(endtime);
-
-                            daysSpan.innerHTML = t.days;
-                            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-                            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-                            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-                            if (t.total <= 0) {
-                                clearInterval(timeinterval);
-                            }
-                        }
-
-                        updateClock();
-                        var timeinterval = setInterval(updateClock, 1000);
-                    }
-
-                    var deadline = new Date("September 1, 2017");
-                    initializeClock('clockdiv', deadline);
-
-                    function getTimeRemaining(endtime) {
-                        var t = Date.parse(endtime) - Date.parse(new Date());
-                        var seconds = Math.floor((t / 1000) % 60);
-                        var minutes = Math.floor((t / 1000 / 60) % 60);
-                        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-                        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-                        return {
-                            'total': t,
-                            'days': days,
-                            'hours': hours,
-                            'minutes': minutes,
-                            'seconds': seconds
-                        };
-                    }
+            $("#popup").hide(); $("#clock").hide(); $("#follows").hide();
+            $('#welcome').hide().fadeIn(2500);
+            $('#welcome').fadeOut('fast', function () {
+                $('#popup').hide().fadeIn(2000);
+                $('#clock').delay(2000).fadeIn('fast', function () {
+                    $('#follows').hide().fadeIn('fast');
                 });
             });
-        });
+            function initializeClock(id, endtime) {
+                var clock = document.getElementById(id);
+                var daysSpan = clock.querySelector('.days');
+                var hoursSpan = clock.querySelector('.hours');
+                var minutesSpan = clock.querySelector('.minutes');
+                var secondsSpan = clock.querySelector('.seconds');
 
+                function updateClock() {
+                    var t = getTimeRemaining(endtime);
+
+                    daysSpan.innerHTML = t.days;
+                    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                    if (t.total <= 0) {
+                        clearInterval(timeinterval);
+                    }
+                }
+
+                updateClock();
+                var timeinterval = setInterval(updateClock, 1000);
+            }
+
+            var deadline = new Date("September 1, 2017");
+            initializeClock('clockdiv', deadline);
+
+            function getTimeRemaining(endtime) {
+                var t = Date.parse(endtime) - Date.parse(new Date());
+                var seconds = Math.floor((t / 1000) % 60);
+                var minutes = Math.floor((t / 1000 / 60) % 60);
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                return {
+                    'total': t,
+                    'days': days,
+                    'hours': hours,
+                    'minutes': minutes,
+                    'seconds': seconds
+                };
+            }
+        });
     </script>
-    <form id="form1" runat="server" >
-        <div id="load" style="padding: 0px;margin: 0px"></div>
-        <div id="contents" style="padding: 0px;margin: 0px">
-            <h1 id="welcome">WELCOME</h1>
-            <h1 id="to">TO</h1>
-       <img id="popup" src="Images/latestLogo.png" alt="popup" style="height:auto; padding:0px; margin:0px; width:45%; resize:none;"/>   
-            <div id="clock" style="padding:0px;">
-                <div id="clockdiv" style="padding:0px;">
-                  <h1 style="font-family:'Times New Roman'; padding:0px; color:brown;">Launching In:</h1>
+    <form id="form1" runat="server">
+        <div id="load"></div>
+        <div id="contents">
+            <h1 id="welcome">WELCOME TO</h1>
+            <img id="popup" src="Images/latestLogo.png" alt="popup" style="height:70%; width:auto; resize:none;" />
+            <div id="clock">
+                <div id="clockdiv">
+                    <h1 style="font-family:'Times New Roman';color:brown;">Launching In:</h1>
                     <div>
                         <span class="days"></span>
                         <div class="smalltext">Days</div>
@@ -203,20 +193,23 @@
                     </div>
                 </div>
             </div>
-         <!--   <div id="follows">
-                <a href="https://www.facebook.com/FunKadaa/" target="_blank" >
-                    <img src="Images/fb.png" style="width:150px; height:auto; padding-right:15px; " />
+            <div id="follows">
+                <a href="https://www.facebook.com/FunKadaa">
+                    <img src="Images/fb.png" style="width:200px; height:auto; resize:none;" target="_blank" />
                 </a>
-                <a href="https://twitter.com/Funkadaa_" target="_blank" >
-                    <img src="Images/twitter.png"  style="width:150px; height:auto;padding-right:15px;" />
+                <br /><br />
+                <a href="https://www.twitter.com/Funkadaa_">
+                    <img src="Images/twitter.png" style="width:200px; height:auto; resize:none;" target="_blank" />
                 </a>
-                <a href="https://www.instagram.com/funkadaa/?hl=en" target="_blank" >
-                    <img src="Images/insaaa.png"style="width:150px; height:auto;padding-right:15px;" />
+                <br /><br />
+                <a href="https://www.instagram.com/funkadaa">
+                    <img src="Images/insaaa.png" style="width:200px; height:auto; resize:none;" target="_blank" />
                 </a>
-                <a href="https://www.youtube.com/channel/UCSFkI44j_ra_Q038l0FjmWg"target="_blank" >
-                    <img src="Images/you.png" alt="Go to W3Schools!" style="width:150px; height:auto; " />
+                <br /><br />
+                <a href="https://www.youtube.com/channel/UCSFkl44j_ra_Q03810FjmWg" target="_blank">
+                    <img src="Images/you.png" alt="Go to W3Schools!" style="width:200px; height:auto; resize:none;" />
                 </a>
-            </div> -->
+            </div>
         </div>
     </form>
 </body>
