@@ -1,0 +1,60 @@
+
+
+#logo{
+    width: 10%;
+height: auto;
+position:absolute;
+left:0px;
+top:-10px;
+}
+
+
+
+
+/* On hover, the links will turn white */                               /*Must */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+
+/* Remove border color from the collapsible button */                /*Must*/
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: yellow;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+
+
+.navbar {
+    margin-bottom: 0;
+    background-color:#FF5733;
+    border: 0;t-size: 45px !important;
+    letter-spacing: 1px;
+    opacity:0.9;
+    /*padding-bottom: 45px;  */
+        font-family:Verdana, Geneva, sans-serif,!important;
+    font-size: 25px !important;
+
+}
+.nav
+{
+font-position:justified;
+}
+
+.nav > li {                                                             
+    display:Inline-block;
+    padding: 30px 40px 25px 7px;                                  
+}
+
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
